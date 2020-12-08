@@ -1,0 +1,144 @@
+Function: Add Student
+Inputs: @Fname, @Lname, @StudentId, @YearEnrolled, @GPA
+Outputs: None
+Pseudocode:
+Connect to the database
+Query = INSERT INTO Student(@Fname, @Lname, @StudentId, @YearEnrolled, @GPA)
+Parse Query
+Execute Query 
+Close connection to the database
+
+Function: View Student Application
+Inputs: @Fname, @Lname, @StudentId
+Outputs: Fname, Lname, YearEnrolled, Major, Status
+Pseudocode:
+Connect to the database
+Query = SELECT s.fname, s.lname, s.yearEnrolled, s.major, a.status
+	FROM Student as s, Add as a
+	WHERE @Fname = s.fname and @Lname=s.lname and @StudentId=s.yearEnrolled and @yearEnrolled = 0
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Update Student Application
+Inputs: @Fname, @Lname, @YearEnrolled, @Major, @Status
+Output: Fname, Lname, YearEnrolled, Major, Status
+Pseudocode: 
+Connect to the database
+Query = UPDATE Student
+	Set "attribute" 
+	WHERE (Fname = @Fname) AND (Lname = @Lname) AND 
+	(YearEnrolled = @ YearEnrolled) AND (Major = @Major) 
+	AND (Status = @Status)
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Search Student
+Inputs: @StudentId
+Output: @Fname, @Lname, @YearEnrolled, @Major
+Pseudocode: 
+Connect to the database
+Query = SELECT s.fname, s.lname, s.yearEnrolled, s.major
+	FROM Student as s
+	WHERE s.studentId = @StudentId
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Update Student 
+Inputs: @Fname, @Lname, @YearEnrolled, @Major
+Output: Fname, Lname, YearEnrolled, Major 
+Pseudocode: 
+Connect to the database
+Query = UPDATE Student 
+	Set "attribute" 
+	WHERE (Fname = @Fname) AND (Lname = @Lname) AND 
+	(YearEnrolled = @ YearEnrolled) AND (Major = @Major) 
+	AND (Status = @Status)
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: View Student
+Inputs: @Studentid
+Outputs: Fname, Lname, YearEnrolled, Major 
+Pseudocode:
+Connect to the database
+Query = SELECT s.fname, s.lname, s.yearEnrolled, s.major
+	FROM Student as s
+	WHERE @StudentId = s.studentId
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Select course
+Inputs: @CourseId
+Outputs: CourseId, StudentId,  
+Pseudocode:
+Connect to the database
+Query = SELECT c.courseId, c.studentId 
+	FROM  Course as c
+	WHERE @CourseId =  c.courseId
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Select Student
+Inputs: @StudentId
+Outputs:  Fname, Lname, YearEnrolled, Major 
+Pseudocode:
+Connect to the database
+Query = SELECT s.fname, s.lname, s.yearEnrolled, s.major
+	FROM  Student as S
+	WHERE @StudentId =  s.studentId
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Add Grade 
+Inputs: @Mark
+Outputs:  Studentid, Mark
+Pseudocode:
+Connect to the database
+Query = SELECT s.studentid, g.mark
+	FROM  Student as S, Grade as g
+	WHERE @Mark =  g.mark and s.studentId = g.studentId
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: View Prof
+Inputs: @ProfId
+Outputs: Fname, Lname, ProgramName
+Pseudocode:
+Connect to the database
+Query = SELECT pr.fname, pr.lname, p.name
+	FROM Prof as pr, Program as p
+	WHERE @ProfId = pr.profId and pr.programID = p.programID
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: Select Course
+Inputs: @CourseId
+Outputs:  CourseName, ProgramName, Credit 
+Pseudocode:
+Connect to the database
+Query = SELECT c.name, c.credit, p.name
+	FROM  Course as c, Program as p
+	WHERE @CourseId =  c.courseID and c.programID = p.programID
+Parse Query  
+Execute Query 
+Close connection to the database
+
+Function: View Grade
+Inputs: None
+Outputs:  GPA
+Pseudocode:
+Connect to the database
+Query = SELECT s.gpa
+	FROM  Student as s
+Parse Query  
+Execute Query 
+Close connection to the database
