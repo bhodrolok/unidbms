@@ -1,3 +1,4 @@
+/*
 Function: Add Student
 Inputs: @Fname, @Lname, @StudentId, @YearEnrolled, @GPA
 Outputs: None
@@ -45,6 +46,7 @@ Query = SELECT s.fname, s.lname, s.yearEnrolled, s.major
 Parse Query  
 Execute Query 
 Close connection to the database
+*/
 
 Function: Update Student 
 Inputs: @Fname, @Lname, @YearEnrolled, @Major
