@@ -25,11 +25,15 @@ DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `Student_id` int(11) NOT NULL,
   `Username` varchar(45) NOT NULL,
+  `Admin_id` int(11) NOT NULL,
   `Year_enrolled` int(11) NOT NULL,
   `GPA` float NOT NULL,
-  PRIMARY KEY (`Student_id`,`Username`),
+  `App_status` varchar(45) NOT NULL,
+  PRIMARY KEY (`Student_id`,`Username`,`Admin_id`),
   UNIQUE KEY `Student_id_UNIQUE` (`Student_id`),
   UNIQUE KEY `Username_UNIQUE` (`Username`),
+  UNIQUE KEY `Admin_id_UNIQUE` (`Admin_id`),
+  CONSTRAINT `Admin_id_student` FOREIGN KEY (`Admin_id`) REFERENCES `admin` (`Admin_id`),
   CONSTRAINT `Username_student` FOREIGN KEY (`Username`) REFERENCES `user` (`Username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -52,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-29  0:28:51
+-- Dump completed on 2020-12-08 18:27:28
