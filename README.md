@@ -1,12 +1,12 @@
 A simple yet functional university database application created using MySQL and PHP.
 
 This project will produce a database that will help university administrations keep a record of student information
-such as grades and contact information. 
+such as grades and basic information. 
 
 Done for course: CPSC 471 - Fall 2020.
 
 //Usage instructions: 
-Very helpful to have XAMPP (https://www.apachefriends.org/index.html) or MAMP(https://www.mamp.info/en/windows/) installed in your device.
+Very helpful to have a server solutions stack such as: XAMPP (https://www.apachefriends.org/index.html) or MAMP(https://www.mamp.info/en/windows/) installed in your device.
 
 Make sure the get the source code from the latest branch(Master).
 
