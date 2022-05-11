@@ -1,4 +1,5 @@
 Project completed for course: CPSC 471 (Fall 2020).
+
 A simple yet functional university database application created using MySQL and PHP.
 
 This project will produce a database that will help university administrations keep a record of student information
